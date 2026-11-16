@@ -1,0 +1,130 @@
+/* Base da página */
+body {
+  margin: 0;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Menu */
+header {
+  background-color: #111827;
+  border-bottom: 1px solid #334155;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+header a {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+header a:hover,
+header a:focus-visible {
+  color: #7dd3fc;
+  text-decoration: underline;
+}
+
+/* Área principal e apresentação */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 48px;
+}
+
+main section {
+  padding: 32px 0;
+}
+
+#inicio {
+  padding: 72px 0 40px;
+  border-bottom: 1px solid #334155;
+}
+
+#inicio h1 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+}
+
+/* Cada item da lista vira um cartão */
+#projetos ul {
+  display: grid;
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+#projetos li {
+  padding: 20px;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+#projetos h3 {
+  margin-top: 0;
+}
+
+/* A partir de 640 px, a lista passa a ter duas colunas */
+@media (min-width: 640px) {
+  #projetos ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+main a {
+  color: #7dd3fc;
+}
+
+main a:hover,
+main a:focus-visible {
+  color: #bae6fd;
+}
+
+/* O botão acompanha a cor do texto do cabeçalho. */
+.botao-tema {
+  padding: 4px 12px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Estas regras se aplicam quando o React define data-tema="claro". */
+html[data-tema="claro"] body {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+html[data-tema="claro"] header,
+html[data-tema="claro"] #projetos li {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+html[data-tema="claro"] #inicio {
+  border-color: #cbd5e1;
+}
+
+html[data-tema="claro"] #inicio h1,
+html[data-tema="claro"] header a {
+  color: #0f172a;
+}
+
+html[data-tema="claro"] header a:hover,
+html[data-tema="claro"] header a:focus-visible,
+html[data-tema="claro"] main a {
+  color: #075985;
+}
