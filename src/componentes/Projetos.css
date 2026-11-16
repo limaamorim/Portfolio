@@ -1,32 +1,4 @@
-/* Organiza o filtro, a grade de cartões e as tecnologias de cada projeto. */
-.projetos__controles {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.25rem 1rem;
-  margin-bottom: 0.75rem;
-  color: var(--texto-suave);
-  font-size: 0.875rem;
-}
-
-.projetos__filtro {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  min-height: 2.75rem;
-  color: var(--texto);
-  cursor: pointer;
-}
-
-.projetos__filtro input {
-  flex: 0 0 auto;
-  width: 1.125rem;
-  height: 1.125rem;
-  margin: 0;
-  accent-color: var(--destaque);
-}
-
+/* Organiza a grade, os cartões e as tecnologias de cada projeto. */
 .projetos__lista,
 .projetos__tecnologias {
   margin: 0;
@@ -49,11 +21,6 @@
   border-radius: var(--raio-painel);
   background: var(--superficie);
   color: var(--texto-suave);
-}
-
-.projetos__cartao:hover,
-.projetos__cartao:focus-within {
-  border-color: var(--destaque);
 }
 
 .projetos__cartao h3 {
@@ -90,5 +57,22 @@
 @media (min-width: 42rem) {
   .projetos__lista {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* O título acompanha o destaque da borda, como no portfólio de referência. */
+.projetos__cartao:focus-within h3 {
+  color: var(--destaque);
+}
+
+@media (hover: hover) {
+  .projetos__cartao:hover h3 {
+    color: var(--destaque);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projetos__cartao h3 {
+    transition: color var(--duracao-cartao-hover) ease-out;
   }
 }

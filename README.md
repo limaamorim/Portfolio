@@ -1,6 +1,6 @@
 # Portfólio de José Amorim
 
-Portfólio pessoal em React, TypeScript e Vite. A página reúne apresentação, tecnologias, projetos, experiência e contato. A lista de projetos pode ser filtrada por disponibilidade de repositório, e o navegador guarda a preferência de tema.
+Portfólio pessoal em React, TypeScript e Vite. A página reúne apresentação, tecnologias, projetos, experiência e contato. O navegador guarda a preferência de tema.
 
 ## Desenvolvimento local
 
@@ -26,4 +26,5 @@ No PowerShell, use `npm.cmd` se o terminal bloquear o script `npm.ps1`.
 - `src/dados/` reúne os projetos, as tecnologias, a trajetória e os contatos.
 - `src/hooks/useTema.ts` sincroniza o tema com o HTML e o armazenamento local.
 - `src/index.css` define a paleta dos temas, o reset e os estilos globais. Os arquivos `*.css` ficam junto da página ou do componente que estilizam e usam classes com prefixos como `projetos__cartao`.
+- `src/componentes/CartaoHover.css` reúne a transição da borda dos cartões e o suporte a movimento reduzido.
 - `public/favicon.svg` é o ícone da aba do navegador.

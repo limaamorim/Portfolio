@@ -1,39 +1,16 @@
-// Exibe os projetos e filtra os que têm um repositório público.
-import { useState } from "react";
+// Renderiza todos os projetos do portfólio a partir dos dados cadastrados.
 import { projetos } from "../dados/projetos";
 import Secao from "./Secao";
 import "./Projetos.css";
+import "./CartaoHover.css";
 
 export default function Projetos() {
-  const [somenteComGithub, setSomenteComGithub] = useState(false);
-
-  // Calcula a lista a partir da preferência atual do filtro.
-  const projetosVisiveis = somenteComGithub
-    ? projetos.filter((projeto) => Boolean(projeto.linkGithub))
-    : projetos;
-
   return (
     <Secao id="projetos" titulo="Projetos em destaque">
-      <div className="projetos__controles">
-        <label className="projetos__filtro">
-          <input
-            type="checkbox"
-            checked={somenteComGithub}
-            onChange={(evento) => setSomenteComGithub(evento.currentTarget.checked)}
-          />
-          Mostrar apenas projetos com GitHub
-        </label>
-
-        <p role="status">
-          {projetosVisiveis.length === 1
-            ? "1 projeto exibido"
-            : `${projetosVisiveis.length} projetos exibidos`}
-        </p>
-      </div>
-
       <ul className="projetos__lista" role="list">
-        {projetosVisiveis.map((projeto) => (
-          <li key={projeto.id} className="projetos__cartao">
+        {/* O ID é a chave estável de cada item renderizado na lista. */}
+        {projetos.map((projeto) => (
+          <li key={projeto.id} className="projetos__cartao cartao-hover">
             <h3>{projeto.nome}</h3>
             <p>{projeto.descricao}</p>
 
@@ -41,6 +18,7 @@ export default function Projetos() {
               {projeto.tecnologias.map((tecnologia) => <li key={tecnologia}>{tecnologia}</li>)}
             </ul>
 
+            {/* O cartão exibe o link apenas quando o projeto tem repositório cadastrado. */}
             {projeto.linkGithub && (
               <a
                 className="projetos__link"

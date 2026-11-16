@@ -66,8 +66,7 @@ a:hover {
   color: var(--destaque-hover);
 }
 
-button,
-input {
+button {
   font: inherit;
 }
 

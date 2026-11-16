@@ -58,6 +58,7 @@
 }
 
 .inicio__tecnologias li {
+  --transformacao-cartao-hover: scale(1.05);
   padding: 0.375rem 0.75rem;
   border: 1px solid var(--borda);
   border-radius: 0.45rem;
@@ -120,15 +121,12 @@
 }
 
 .inicio__contatos a {
+  --transformacao-cartao-hover: scale(1.03);
   display: grid;
   height: 100%;
   color: var(--texto);
   text-decoration: none;
   overflow-wrap: anywhere;
-}
-
-.inicio__contatos a:hover {
-  border-color: var(--destaque);
 }
 
 .inicio__contatos a > span {

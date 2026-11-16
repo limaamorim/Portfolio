@@ -10,6 +10,7 @@ type SecaoProps = {
 };
 
 export default function Secao({ id, titulo, alternada, children }: SecaoProps) {
+  // A âncora usa o ID da seção e aria-labelledby aponta para o título visível.
   const idTitulo = `titulo-${id}`;
 
   return (

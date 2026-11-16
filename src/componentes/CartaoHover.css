@@ -1,0 +1,28 @@
+/* Compartilha a transição de borda e a escala opcional dos cartões. */
+.cartao-hover {
+  --borda-cartao-ativa: color-mix(in srgb, var(--destaque) 55%, var(--borda));
+  --duracao-cartao-hover: 180ms;
+}
+
+.cartao-hover:focus-within {
+  border-color: var(--borda-cartao-ativa);
+}
+
+@media (hover: hover) {
+  .cartao-hover:hover {
+    border-color: var(--borda-cartao-ativa);
+  }
+}
+
+/* Em telas de toque e com movimento reduzido, mantém o cartão no tamanho original. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cartao-hover {
+    transition:
+      border-color var(--duracao-cartao-hover) ease-out,
+      transform var(--duracao-cartao-hover) ease-out;
+  }
+
+  .cartao-hover:hover {
+    transform: var(--transformacao-cartao-hover, none);
+  }
+}

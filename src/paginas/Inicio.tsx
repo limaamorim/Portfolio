@@ -5,12 +5,14 @@ import Projetos from "../componentes/Projetos";
 import Secao from "../componentes/Secao";
 import { contatos, tecnologias, trajetoria } from "../dados/perfil";
 import "./Inicio.css";
+import "../componentes/CartaoHover.css";
 
 export default function Inicio() {
   return (
     <>
       <Cabecalho />
 
+      {/* O ID e o tabIndex permitem que o atalho do cabeçalho envie o foco ao conteúdo. */}
       <main id="conteudo" className="inicio" tabIndex={-1}>
         <Apresentacao />
 
@@ -28,20 +30,21 @@ export default function Inicio() {
             </div>
 
             <ul className="inicio__destaques" role="list">
-              <li><strong>Aplicações web</strong>React e TypeScript</li>
-              <li><strong>Automação e integração</strong>Power Apps e Power Automate</li>
-              <li><strong>Dados corporativos</strong>Dataverse e SharePoint</li>
+              <li className="cartao-hover"><strong>Aplicações web</strong>React e TypeScript</li>
+              <li className="cartao-hover"><strong>Automação e integração</strong>Power Apps e Power Automate</li>
+              <li className="cartao-hover"><strong>Dados corporativos</strong>Dataverse e SharePoint</li>
             </ul>
           </div>
         </Secao>
 
         <Secao id="tecnologias" titulo="Tecnologias" alternada>
           <div className="inicio__tecnologias">
+            {/* Cada grupo tem um título e uma lista de tecnologias. */}
             {tecnologias.map(({ categoria, itens }) => (
               <div key={categoria}>
                 <h3>{categoria}</h3>
                 <ul role="list">
-                  {itens.map((tecnologia) => <li key={tecnologia}>{tecnologia}</li>)}
+                  {itens.map((tecnologia) => <li key={tecnologia} className="cartao-hover">{tecnologia}</li>)}
                 </ul>
               </div>
             ))}
@@ -56,6 +59,7 @@ export default function Inicio() {
               <li key={titulo}>
                 <div className="inicio__trajetoria-cabecalho">
                   <h3>{titulo}</h3>
+                  {/* Alguns itens da trajetória ainda não têm um período cadastrado. */}
                   {periodo && <span>{periodo}</span>}
                 </div>
                 <p className="inicio__instituicao">{instituicao}</p>
@@ -69,7 +73,7 @@ export default function Inicio() {
           <ul className="inicio__contatos" role="list">
             {contatos.map(({ nome, detalhe, url }) => (
               <li key={nome}>
-                <a href={url}>
+                <a className="cartao-hover" href={url}>
                   <strong>{nome} <span aria-hidden="true">↗</span></strong>
                   <span>{detalhe}</span>
                 </a>

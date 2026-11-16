@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import BotaoTema from "./BotaoTema";
 import "./Cabecalho.css";
 
+// Os IDs correspondem aos destinos das âncoras na página.
 const itensMenu = [
   { id: "inicio", rotulo: "Início" },
   { id: "sobre", rotulo: "Sobre" },
@@ -13,6 +14,7 @@ const itensMenu = [
 ];
 
 export default function Cabecalho() {
+  // O estado controla a abertura no mobile. A ref permite devolver o foco ao botão.
   const [menuAberto, setMenuAberto] = useState(false);
   const botaoMenu = useRef<HTMLButtonElement>(null);
 
@@ -20,12 +22,14 @@ export default function Cabecalho() {
     <header
       className="cabecalho"
       onKeyDown={(evento) => {
+        // Escape fecha o menu e devolve o foco ao controle quando ele está visível.
         if (evento.key === "Escape" && menuAberto && botaoMenu.current?.getClientRects().length) {
           setMenuAberto(false);
           botaoMenu.current.focus();
         }
       }}
       onBlur={(evento) => {
+        // Fecha o menu apenas quando o foco sai de todo o cabeçalho.
         if (!evento.currentTarget.contains(evento.relatedTarget)) {
           setMenuAberto(false);
         }

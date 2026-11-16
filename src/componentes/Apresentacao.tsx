@@ -15,6 +15,7 @@ export default function Apresentacao() {
           em projetos web.
         </p>
 
+        {/* Os links usam os IDs das seções para navegar dentro da página. */}
         <div className="apresentacao__acoes">
           <a className="apresentacao__acao apresentacao__acao--principal" href="#projetos">
             Ver projetos <span aria-hidden="true">↓</span>
@@ -22,6 +23,7 @@ export default function Apresentacao() {
           <a className="apresentacao__acao" href="#contato">Contato</a>
         </div>
 
+        {/* O terminal é uma apresentação estática do perfil e das tecnologias. */}
         <div className="apresentacao__terminal">
           <div className="apresentacao__terminal-barra" aria-hidden="true">
             <span></span>

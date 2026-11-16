@@ -15,8 +15,10 @@ function lerTemaInicial(): Tema {
 }
 
 export function useTema() {
+  // O inicializador lê a preferência quando o componente é montado.
   const [tema, setTema] = useState(lerTemaInicial);
 
+  // Quando o estado muda, o efeito atualiza o CSS e salva a escolha no navegador.
   useEffect(() => {
     document.documentElement.dataset.tema = tema;
 
@@ -27,6 +29,7 @@ export function useTema() {
     }
   }, [tema]);
 
+  // Calcula o próximo tema a partir do valor mais recente do estado.
   function alternarTema() {
     setTema((temaAtual) => (temaAtual === "escuro" ? "claro" : "escuro"));
   }
