@@ -1,5 +1,5 @@
 /* Estiliza o controle de tema e seu estado pressionado. */
-.botao {
+.botao-tema {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -14,13 +14,13 @@
   cursor: pointer;
 }
 
-.botao:hover,
-.botao[aria-pressed="true"] {
+.botao-tema:hover,
+.botao-tema[aria-pressed="true"] {
   background: var(--superficie-elevada);
   color: var(--destaque);
 }
 
-.botao span {
+.botao-tema span {
   font-size: 1rem;
   line-height: 1;
 }

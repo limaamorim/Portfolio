@@ -1,0 +1,112 @@
+/* Estiliza a barra fixa, a navegação e o menu em telas estreitas. */
+.cabecalho {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  border-bottom: 1px solid var(--borda);
+  background: color-mix(in srgb, var(--fundo) 93%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.cabecalho__conteudo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: var(--largura-conteudo);
+  min-height: 4rem;
+  margin-inline: auto;
+  padding-inline: var(--espaco-lateral);
+}
+
+.cabecalho__marca {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  margin-right: auto;
+  font: 700 1.125rem var(--fonte-mono);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cabecalho__botao-menu {
+  min-height: 2.75rem;
+  padding-inline: 0.75rem;
+  border: 1px solid var(--borda-interativa);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.cabecalho__navegacao {
+  display: none;
+  position: absolute;
+  inset: 100% 0 auto;
+  max-height: calc(100dvh - 4rem);
+  overflow-y: auto;
+  padding: 0.5rem var(--espaco-lateral);
+  border-bottom: 1px solid var(--borda);
+  background: var(--superficie);
+}
+
+.cabecalho__navegacao[data-aberto="true"] {
+  display: block;
+}
+
+.cabecalho__links {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabecalho__links a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+  font-weight: 550;
+  text-decoration: none;
+}
+
+.cabecalho__links a:is(:hover, :focus-visible) {
+  color: var(--destaque);
+  text-decoration: underline;
+}
+
+.cabecalho__atalho {
+  position: absolute;
+  z-index: 1;
+  inset: 0.75rem auto auto 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--superficie);
+}
+
+.cabecalho__atalho:not(:focus) {
+  clip-path: inset(50%);
+}
+
+@media (min-width: 48rem) {
+  .cabecalho__botao-menu {
+    display: none;
+  }
+
+  .cabecalho__navegacao {
+    display: block;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .cabecalho__links {
+    flex-direction: row;
+    gap: clamp(0.75rem, 2.4vw, 2rem);
+  }
+}

@@ -1,37 +1,39 @@
-/* Define a paleta dos temas, o reset e os estilos globais. */
+/* Define os temas, o reset e as regras globais de acessibilidade. */
 :root {
   color-scheme: dark;
-  --fundo: #0f172a;
-  --superficie: #111c30;
-  --superficie-elevada: #1e293b;
-  --borda: #334761;
-  --borda-interativa: #64748b;
-  --texto: #e2e8f0;
-  --texto-suave: #b6c4d8;
-  --titulo: #f8fafc;
-  --destaque: #7dd3fc;
-  --destaque-hover: #bae6fd;
-  --texto-acao: #082436;
-  --brilho: #193b56;
-  --largura-conteudo: 70rem;
+  --fundo: #0b0e16;
+  --fundo-alternado: #10141e;
+  --superficie: #141925;
+  --superficie-elevada: #1b2230;
+  --borda: #2a3244;
+  --borda-interativa: #65758b;
+  --texto: #e9edf4;
+  --texto-suave: #a8b2c3;
+  --destaque: #15d4ad;
+  --destaque-hover: #60eac7;
+  --texto-acao: #071915;
+  --brilho: #15322d;
+  --largura-conteudo: 72rem;
   --espaco-lateral: clamp(1rem, 4vw, 2rem);
-  --raio-painel: 1.25rem;
+  --raio-painel: 0.875rem;
+  --fonte-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  scroll-padding-top: 5.5rem;
 }
 
 :root[data-tema="claro"] {
   color-scheme: light;
-  --fundo: #f8fafc;
+  --fundo: #f8fafb;
+  --fundo-alternado: #edf3f3;
   --superficie: #ffffff;
-  --superficie-elevada: #edf3f9;
-  --borda: #cbd5e1;
-  --borda-interativa: #64748b;
-  --texto: #1e293b;
-  --texto-suave: #475569;
-  --titulo: #0f172a;
-  --destaque: #075985;
-  --destaque-hover: #0c4a6e;
+  --superficie-elevada: #eef5f4;
+  --borda: #c8d6d8;
+  --borda-interativa: #657974;
+  --texto: #172530;
+  --texto-suave: #4b5e67;
+  --destaque: #006753;
+  --destaque-hover: #005040;
   --texto-acao: #ffffff;
-  --brilho: #d9eefb;
+  --brilho: #def3ed;
 }
 
 *,
@@ -44,7 +46,7 @@ body {
   margin: 0;
   background: var(--fundo);
   color: var(--texto);
-  font-family: system-ui, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -72,4 +74,10 @@ input {
 :focus-visible {
   outline: 2px solid var(--destaque);
   outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }

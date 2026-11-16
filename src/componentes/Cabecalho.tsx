@@ -1,6 +1,7 @@
-// Exibe a navegação por seções e o controle de tema.
+// Mantém a navegação fixa e abre o menu em telas estreitas.
+import { useRef, useState } from "react";
 import BotaoTema from "./BotaoTema";
-import estilos from "./Cabecalho.module.css";
+import "./Cabecalho.css";
 
 const itensMenu = [
   { id: "inicio", rotulo: "Início" },
@@ -12,23 +13,51 @@ const itensMenu = [
 ];
 
 export default function Cabecalho() {
-  return (
-    <header className={estilos.cabecalho}>
-      <a href="#conteudo" className={estilos.atalho}>Pular para o conteúdo</a>
+  const [menuAberto, setMenuAberto] = useState(false);
+  const botaoMenu = useRef<HTMLButtonElement>(null);
 
-      <div className={estilos.conteudo}>
-        <a className={estilos.marca} href="#inicio">
-          <span className={estilos.monograma} aria-hidden="true">JA</span>
-          José Amorim
+  return (
+    <header
+      className="cabecalho"
+      onKeyDown={(evento) => {
+        if (evento.key === "Escape" && menuAberto && botaoMenu.current?.getClientRects().length) {
+          setMenuAberto(false);
+          botaoMenu.current.focus();
+        }
+      }}
+      onBlur={(evento) => {
+        if (!evento.currentTarget.contains(evento.relatedTarget)) {
+          setMenuAberto(false);
+        }
+      }}
+    >
+      <a href="#conteudo" className="cabecalho__atalho" onClick={() => setMenuAberto(false)}>
+        Pular para o conteúdo
+      </a>
+
+      <div className="cabecalho__conteudo">
+        <a className="cabecalho__marca" href="#inicio" aria-label="<Dev /> — início" onClick={() => setMenuAberto(false)}>
+          {"<Dev />"}
         </a>
 
         <BotaoTema />
 
-        <nav className={estilos.navegacao} aria-label="Menu principal">
-          <ul className={estilos.links}>
+        <button
+          ref={botaoMenu}
+          className="cabecalho__botao-menu"
+          type="button"
+          aria-expanded={menuAberto}
+          aria-controls="menu-principal"
+          onClick={() => setMenuAberto((aberto) => !aberto)}
+        >
+          {menuAberto ? "Fechar" : "Menu"}
+        </button>
+
+        <nav id="menu-principal" className="cabecalho__navegacao" aria-label="Menu principal" data-aberto={menuAberto}>
+          <ul className="cabecalho__links">
             {itensMenu.map(({ id, rotulo }) => (
               <li key={id}>
-                <a href={`#${id}`}>{rotulo}</a>
+                <a href={`#${id}`} onClick={() => setMenuAberto(false)}>{rotulo}</a>
               </li>
             ))}
           </ul>

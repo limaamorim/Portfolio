@@ -1,6 +1,6 @@
 // Disponibiliza a troca de tema no cabeçalho.
 import { useTema } from "../hooks/useTema";
-import estilos from "./BotaoTema.module.css";
+import "./BotaoTema.css";
 
 export default function BotaoTema() {
   const { tema, alternarTema } = useTema();
@@ -8,7 +8,7 @@ export default function BotaoTema() {
   return (
     <button
       type="button"
-      className={estilos.botao}
+      className="botao-tema"
       aria-pressed={tema === "claro"}
       onClick={alternarTema}
     >

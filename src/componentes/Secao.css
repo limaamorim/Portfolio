@@ -1,0 +1,22 @@
+/* Padroniza as faixas verticais e o título de cada assunto. */
+.secao {
+  padding: clamp(3.5rem, 8vw, 7rem) var(--espaco-lateral);
+}
+
+.secao--alternada {
+  border-block: 1px solid var(--borda);
+  background: var(--fundo-alternado);
+}
+
+.secao__conteudo {
+  max-width: calc(var(--largura-conteudo) - var(--espaco-lateral) * 2);
+  margin-inline: auto;
+}
+
+.secao__titulo {
+  margin-bottom: clamp(1.75rem, 5vw, 3rem);
+  font-size: clamp(1.875rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  text-align: center;
+}

@@ -23,7 +23,7 @@ No PowerShell, use `npm.cmd` se o terminal bloquear o script `npm.ps1`.
 
 - `src/paginas/Inicio.tsx` monta as seções da página.
 - `src/componentes/` contém o cabeçalho, a apresentação, as seções, o botão de tema e os projetos.
-- `src/dados/projetos.ts` é onde se cadastram os projetos e seus links opcionais.
+- `src/dados/` reúne os projetos, as tecnologias, a trajetória e os contatos.
 - `src/hooks/useTema.ts` sincroniza o tema com o HTML e o armazenamento local.
-- `src/index.css` define a paleta dos temas, o reset e os estilos globais. Os arquivos `*.module.css` ficam junto da página ou do componente que estilizam.
+- `src/index.css` define a paleta dos temas, o reset e os estilos globais. Os arquivos `*.css` ficam junto da página ou do componente que estilizam e usam classes com prefixos como `projetos__cartao`.
 - `public/favicon.svg` é o ícone da aba do navegador.

@@ -1,19 +1,39 @@
-// Exibe a apresentação principal e o atalho para os projetos.
-import estilos from "./Apresentacao.module.css";
+// Apresenta o perfil e os atalhos para projetos e contato.
+import "./Apresentacao.css";
 
-type ApresentacaoProps = {
-  nome: string;
-  descricao: string;
-};
-
-export default function Apresentacao({ nome, descricao }: ApresentacaoProps) {
+export default function Apresentacao() {
   return (
-    <section id="inicio" className={estilos.apresentacao} aria-labelledby="titulo-inicio">
-      <h1 id="titulo-inicio" className={estilos.titulo}>{nome}</h1>
-      <p className={estilos.descricao}>{descricao}</p>
-      <a className={estilos.acao} href="#projetos">
-        Ver projetos <span aria-hidden="true">↓</span>
-      </a>
+    <section id="inicio" className="apresentacao" aria-labelledby="titulo-inicio" tabIndex={-1}>
+      <div className="apresentacao__conteudo">
+        <p className="apresentacao__saudacao">Olá, eu sou</p>
+        <h1 id="titulo-inicio" className="apresentacao__titulo">
+          José <span>Fernando</span>
+        </h1>
+        <p className="apresentacao__cargo">Desenvolvedor de aplicações</p>
+        <p className="apresentacao__descricao">
+          Desenvolvo aplicações com Power Platform e exploro React e TypeScript
+          em projetos web.
+        </p>
+
+        <div className="apresentacao__acoes">
+          <a className="apresentacao__acao apresentacao__acao--principal" href="#projetos">
+            Ver projetos <span aria-hidden="true">↓</span>
+          </a>
+          <a className="apresentacao__acao" href="#contato">Contato</a>
+        </div>
+
+        <div className="apresentacao__terminal">
+          <div className="apresentacao__terminal-barra" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p><code><span>$</span> whoami</code></p>
+          <p>José Fernando de Lima Amorim</p>
+          <p><code><span>$</span> cat tecnologias.txt</code></p>
+          <p>React, TypeScript, Power Platform</p>
+        </div>
+      </div>
     </section>
   );
 }
