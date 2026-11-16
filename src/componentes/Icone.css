@@ -1,0 +1,11 @@
+/* Estiliza os fundos dos ícones usados nos cartões e na trajetória. */
+.icone-destaque {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.375rem;
+  height: 2.375rem;
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--destaque) 12%, var(--superficie));
+  color: var(--destaque);
+}

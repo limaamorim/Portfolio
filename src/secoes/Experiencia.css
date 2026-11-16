@@ -1,0 +1,47 @@
+/* Posiciona os cartões e os ícones ao longo da linha do tempo. */
+.experiencia__trajetoria {
+  display: grid;
+  gap: 1rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 0 0 0 1.875rem;
+  border-left: 1px solid var(--borda-interativa);
+  list-style: none;
+}
+
+.experiencia__trajetoria li {
+  position: relative;
+  color: var(--texto-suave);
+}
+
+.experiencia__icone {
+  position: absolute;
+  top: 0.875rem;
+  left: -1.875rem;
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  transform: translateX(calc(-50% - 1px));
+}
+
+.experiencia__trajetoria-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+}
+
+.experiencia__trajetoria h3 {
+  color: var(--texto);
+  font-size: 1.05rem;
+}
+
+.experiencia__trajetoria-cabecalho span {
+  color: var(--destaque);
+  font: 0.8rem var(--fonte-mono);
+}
+
+.experiencia__instituicao {
+  margin: 0.25rem 0 0.5rem;
+  font-weight: 650;
+}

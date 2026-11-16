@@ -20,3 +20,17 @@
   letter-spacing: -0.04em;
   text-align: center;
 }
+
+/* Compartilha a base visual dos painéis que aparecem dentro das seções. */
+.secao__painel {
+  padding: 1.125rem 1.25rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-painel);
+  background: var(--superficie);
+}
+
+.secao__painel--com-icone {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}

@@ -1,5 +1,5 @@
 // Apresenta o perfil e os atalhos para projetos e contato.
-import Icone from "./Icone";
+import Icone from "../componentes/Icone";
 import "./Apresentacao.css";
 
 export default function Apresentacao() {

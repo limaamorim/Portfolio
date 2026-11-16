@@ -1,0 +1,33 @@
+/* Define a grade de contatos e o texto dos links. */
+.contato__lista {
+  display: grid;
+  gap: 0.875rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.contato__lista a {
+  --transformacao-cartao-hover: scale(1.03);
+  height: 100%;
+  color: var(--texto);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contato__lista strong,
+.contato__detalhe {
+  display: block;
+}
+
+.contato__detalhe {
+  color: var(--texto-suave);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 38rem) {
+  .contato__lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

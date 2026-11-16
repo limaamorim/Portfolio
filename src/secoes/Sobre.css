@@ -1,0 +1,30 @@
+/* Organiza a biografia e os cartões de destaque. */
+.sobre__conteudo {
+  display: grid;
+  gap: 2rem;
+  color: var(--texto-suave);
+}
+
+.sobre__bio p + p {
+  margin-top: 1rem;
+}
+
+.sobre__destaques {
+  display: grid;
+  gap: 0.875rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sobre__destaques strong {
+  display: block;
+  color: var(--texto);
+}
+
+@media (min-width: 48rem) {
+  .sobre__conteudo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+}

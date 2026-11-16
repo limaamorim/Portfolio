@@ -1,4 +1,6 @@
 // Reúne os ícones decorativos da interface. O texto ao lado fornece o nome acessível.
+import "./Icone.css";
+
 const desenhos = {
   setaBaixo: <path d="M12 5v14m-7-7 7 7 7-7" />,
   enviar: <path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13" />,

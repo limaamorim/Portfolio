@@ -1,0 +1,8 @@
+/* Estiliza o rodapé da página. */
+.app__rodape {
+  padding: 1.5rem var(--espaco-lateral);
+  border-top: 1px solid var(--borda);
+  color: var(--texto-suave);
+  font: 0.8rem/1.6 var(--fonte-mono);
+  text-align: center;
+}

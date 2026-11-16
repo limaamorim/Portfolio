@@ -21,8 +21,9 @@ No PowerShell, use `npm.cmd` se o terminal bloquear o script `npm.ps1`.
 
 ## Estrutura
 
-- `src/paginas/Inicio.tsx` monta as seções da página.
-- `src/componentes/` contém o cabeçalho, a apresentação, as seções, o botão de tema e os projetos.
+- `src/App.tsx` define a ordem da página.
+- `src/secoes/` contém apresentação, sobre, tecnologias, projetos, experiência e contato. Cada seção tem seu próprio CSS.
+- `src/componentes/` contém as peças reutilizáveis, como o cabeçalho, o botão de tema, os ícones e o contêiner de seção.
 - `src/dados/` reúne os projetos, as tecnologias, a trajetória e os contatos.
 - `src/hooks/useTema.ts` sincroniza o tema com o HTML e o armazenamento local.
 - `src/index.css` define a paleta dos temas, o reset e os estilos globais. Os arquivos `*.css` ficam junto da página ou do componente que estilizam e usam classes com prefixos como `projetos__cartao`.

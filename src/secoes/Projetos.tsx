@@ -1,9 +1,9 @@
 // Renderiza todos os projetos do portfólio a partir dos dados cadastrados.
 import { projetos } from "../dados/projetos";
-import Icone from "./Icone";
-import Secao from "./Secao";
+import Icone from "../componentes/Icone";
+import Secao from "../componentes/Secao";
 import "./Projetos.css";
-import "./CartaoHover.css";
+import "../componentes/CartaoHover.css";
 
 export default function Projetos() {
   return (
