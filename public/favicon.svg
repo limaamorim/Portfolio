@@ -1,7 +1,5 @@
-<!-- Representa a marca JA na aba do navegador. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="15" fill="#0b0e16"/>
-  <path d="M14 38a6 6 0 0 0 12 0V21m6 22 8-22h3l8 22M35 35h13"
-        fill="none" stroke="#15d4ad" stroke-width="4" stroke-linecap="round"
-        stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="6" fill="hsl(168 80% 42%)"/>
+  <!-- < / > -->
+  <path fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M11 16l3-6v12l-3-6z M14 10h4l-2 12h-4 M21 16l-3-6v12l3-6z"/>
 </svg>

@@ -30,6 +30,9 @@
 }
 
 .cabecalho__botao-menu {
+  display: inline-grid;
+  place-items: center;
+  min-width: 2.75rem;
   min-height: 2.75rem;
   padding-inline: 0.75rem;
   border: 1px solid var(--borda-interativa);

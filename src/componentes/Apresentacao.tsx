@@ -1,4 +1,5 @@
 // Apresenta o perfil e os atalhos para projetos e contato.
+import Icone from "./Icone";
 import "./Apresentacao.css";
 
 export default function Apresentacao() {
@@ -18,9 +19,11 @@ export default function Apresentacao() {
         {/* Os links usam os IDs das seções para navegar dentro da página. */}
         <div className="apresentacao__acoes">
           <a className="apresentacao__acao apresentacao__acao--principal" href="#projetos">
-            Ver projetos <span aria-hidden="true">↓</span>
+            Ver projetos <Icone nome="setaBaixo" />
           </a>
-          <a className="apresentacao__acao" href="#contato">Contato</a>
+          <a className="apresentacao__acao" href="#contato">
+            Contato <Icone nome="enviar" />
+          </a>
         </div>
 
         {/* O terminal é uma apresentação estática do perfil e das tecnologias. */}

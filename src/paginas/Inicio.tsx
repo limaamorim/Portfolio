@@ -1,6 +1,7 @@
 // Reúne a apresentação e as seções do portfólio em uma página.
 import Apresentacao from "../componentes/Apresentacao";
 import Cabecalho from "../componentes/Cabecalho";
+import Icone from "../componentes/Icone";
 import Projetos from "../componentes/Projetos";
 import Secao from "../componentes/Secao";
 import { contatos, tecnologias, trajetoria } from "../dados/perfil";
@@ -30,9 +31,18 @@ export default function Inicio() {
             </div>
 
             <ul className="inicio__destaques" role="list">
-              <li className="cartao-hover"><strong>Aplicações web</strong>React e TypeScript</li>
-              <li className="cartao-hover"><strong>Automação e integração</strong>Power Apps e Power Automate</li>
-              <li className="cartao-hover"><strong>Dados corporativos</strong>Dataverse e SharePoint</li>
+              <li className="cartao-hover">
+                <span className="inicio__icone"><Icone nome="codigo" tamanho={22} /></span>
+                <div><strong>Aplicações web</strong>React e TypeScript</div>
+              </li>
+              <li className="cartao-hover">
+                <span className="inicio__icone"><Icone nome="servidor" tamanho={22} /></span>
+                <div><strong>Automação e integração</strong>Power Apps e Power Automate</div>
+              </li>
+              <li className="cartao-hover">
+                <span className="inicio__icone"><Icone nome="dados" tamanho={22} /></span>
+                <div><strong>Dados corporativos</strong>Dataverse e SharePoint</div>
+              </li>
             </ul>
           </div>
         </Secao>
@@ -55,8 +65,11 @@ export default function Inicio() {
 
         <Secao id="experiencia" titulo="Experiência e formação" alternada>
           <ol className="inicio__trajetoria" role="list">
-            {trajetoria.map(({ titulo, instituicao, periodo, descricao }) => (
+            {trajetoria.map(({ titulo, instituicao, periodo, descricao, tipo }) => (
               <li key={titulo}>
+                <span className="inicio__icone inicio__icone--trajetoria">
+                  <Icone nome={tipo === "trabalho" ? "trabalho" : "formacao"} />
+                </span>
                 <div className="inicio__trajetoria-cabecalho">
                   <h3>{titulo}</h3>
                   {/* Alguns itens da trajetória ainda não têm um período cadastrado. */}
@@ -71,11 +84,14 @@ export default function Inicio() {
 
         <Secao id="contato" titulo="Vamos conversar?">
           <ul className="inicio__contatos" role="list">
-            {contatos.map(({ nome, detalhe, url }) => (
+            {contatos.map(({ nome, detalhe, url, icone }) => (
               <li key={nome}>
                 <a className="cartao-hover" href={url}>
-                  <strong>{nome} <span aria-hidden="true">↗</span></strong>
-                  <span>{detalhe}</span>
+                  <span className="inicio__icone"><Icone nome={icone} tamanho={20} /></span>
+                  <div>
+                    <strong>{nome}</strong>
+                    <span className="inicio__contato-detalhe">{detalhe}</span>
+                  </div>
                 </a>
               </li>
             ))}

@@ -1,5 +1,6 @@
 // Renderiza todos os projetos do portfólio a partir dos dados cadastrados.
 import { projetos } from "../dados/projetos";
+import Icone from "./Icone";
 import Secao from "./Secao";
 import "./Projetos.css";
 import "./CartaoHover.css";
@@ -25,7 +26,7 @@ export default function Projetos() {
                 href={projeto.linkGithub}
                 aria-label={`GitHub de ${projeto.nome}`}
               >
-                GitHub <span aria-hidden="true">↗</span>
+                <Icone nome="github" tamanho={16} /> GitHub
               </a>
             )}
           </li>

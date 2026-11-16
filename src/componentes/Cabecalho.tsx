@@ -1,6 +1,7 @@
 // Mantém a navegação fixa e abre o menu em telas estreitas.
 import { useRef, useState } from "react";
 import BotaoTema from "./BotaoTema";
+import Icone from "./Icone";
 import "./Cabecalho.css";
 
 // Os IDs correspondem aos destinos das âncoras na página.
@@ -50,11 +51,12 @@ export default function Cabecalho() {
           ref={botaoMenu}
           className="cabecalho__botao-menu"
           type="button"
+          aria-label={menuAberto ? "Fechar" : "Menu"}
           aria-expanded={menuAberto}
           aria-controls="menu-principal"
           onClick={() => setMenuAberto((aberto) => !aberto)}
         >
-          {menuAberto ? "Fechar" : "Menu"}
+          <Icone nome={menuAberto ? "fechar" : "menu"} tamanho={22} />
         </button>
 
         <nav id="menu-principal" className="cabecalho__navegacao" aria-label="Menu principal" data-aberto={menuAberto}>
