@@ -19,29 +19,30 @@ export default function Projetos() {
               {projeto.tecnologias.map((tecnologia) => <li key={tecnologia}>{tecnologia}</li>)}
             </ul>
 
-            {/* O cartão exibe o link apenas quando o projeto tem repositório cadastrado. */}
-            {projeto.linkGithub && (
-              <a
-                className="projetos__link"
-                href={projeto.linkGithub}
-                aria-label={`GitHub de ${projeto.nome}`}
-              >
-                <Icone nome="github" tamanho={16} /> GitHub
-              </a>
+            {/* Agrupa os links opcionais em uma linha dentro do cartão. */}
+            {(projeto.linkGithub || projeto.linkProjeto) && (
+              <div className="projetos__links">
+                {projeto.linkGithub && (
+                  <a
+                    className="projetos__link"
+                    href={projeto.linkGithub}
+                    aria-label={`GitHub de ${projeto.nome}`}
+                  >
+                    <Icone nome="github" tamanho={16} /> GitHub
+                  </a>
+                )}
+
+                {projeto.linkProjeto && (
+                  <a
+                    className="projetos__link"
+                    href={projeto.linkProjeto}
+                    aria-label={`Ver projeto: ${projeto.nome}`}
+                  >
+                    <Icone nome="linkExterno" tamanho={16} /> Ver projeto
+                  </a>
+                )}
+              </div>
             )}
-
-             {/* O cartão exibe o link apenas quando o projeto tem repositório cadastrado. */}
-            {projeto.linkProjeto && (
-              <a
-                className="projetos__link"
-                href={projeto.linkProjeto}
-                aria-label={`GitHub de ${projeto.nome}`}
-              >
-                <Icone nome="github" tamanho={16} /> GitHub
-              </a>
-            )}
-
-
           </li>
         ))}
       </ul>
