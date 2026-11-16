@@ -1,31 +1,19 @@
-import { useEffect, useState } from "react";
-
-// O TypeScript aceita apenas um desses dois textos como tema.
-type Tema = "claro" | "escuro";
+// Disponibiliza a troca de tema no cabeçalho.
+import { useTema } from "../hooks/useTema";
+import estilos from "./BotaoTema.module.css";
 
 export default function BotaoTema() {
-  const [tema, setTema] = useState<Tema>(() => {
-    // Lê a preferência salva quando o componente é inicializado.
-    const temaSalvo = localStorage.getItem("portfolio-tema");
-
-    return temaSalvo === "claro" ? "claro" : "escuro";
-  });
-
-  useEffect(() => {
-    // Adiciona data-tema ao elemento <html> para o CSS usar.
-    document.documentElement.dataset.tema = tema;
-
-    // Salva a preferência para a próxima vez que a página abrir.
-    localStorage.setItem("portfolio-tema", tema);
-  }, [tema]);
-
-  function alternarTema() {
-    setTema((temaAtual) => (temaAtual === "escuro" ? "claro" : "escuro"));
-  }
+  const { tema, alternarTema } = useTema();
 
   return (
-    <button type="button" className="botao-tema" onClick={alternarTema}>
-      {tema === "escuro" ? "Ativar tema claro" : "Ativar tema escuro"}
+    <button
+      type="button"
+      className={estilos.botao}
+      aria-pressed={tema === "claro"}
+      onClick={alternarTema}
+    >
+      <span aria-hidden="true">{tema === "escuro" ? "☾" : "☀"}</span>
+      Tema claro
     </button>
   );
 }

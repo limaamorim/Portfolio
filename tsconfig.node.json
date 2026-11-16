@@ -1,3 +1,4 @@
+// Configura a verificação de tipos da configuração do Vite.
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",

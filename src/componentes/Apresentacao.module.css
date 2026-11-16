@@ -1,0 +1,44 @@
+/* Estiliza o painel de abertura, o título e o link principal. */
+.apresentacao {
+  padding: clamp(1.5rem, 7vw, 5rem);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-painel);
+  background:
+    radial-gradient(ellipse at top right, var(--brilho), transparent 72%),
+    var(--superficie);
+}
+
+.titulo {
+  max-width: 17ch;
+  color: var(--titulo);
+  font-size: clamp(2.25rem, 7vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.05em;
+  overflow-wrap: anywhere;
+}
+
+.descricao {
+  max-width: 48ch;
+  margin-top: 1.25rem;
+  color: var(--texto-suave);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.acao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.625rem;
+  background: var(--destaque);
+  color: var(--texto-acao);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.acao:hover {
+  background: var(--destaque-hover);
+  color: var(--texto-acao);
+}

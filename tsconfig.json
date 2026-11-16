@@ -1,3 +1,4 @@
+// Reúne as configurações de TypeScript da aplicação e do Vite.
 {
   "files": [],
   "references": [

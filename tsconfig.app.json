@@ -1,3 +1,4 @@
+// Configura a verificação de tipos dos arquivos que rodam no navegador.
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",

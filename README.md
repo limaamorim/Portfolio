@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Portfólio de José Amorim
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Portfólio pessoal em React, TypeScript e Vite. A página reúne apresentação, tecnologias, projetos, experiência e contato. A lista de projetos pode ser filtrada por disponibilidade de repositório, e o navegador guarda a preferência de tema.
 
-Currently, two official plugins are available:
+## Desenvolvimento local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 22.12+ ou 24+. No terminal, dentro do projeto:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+No PowerShell, use `npm.cmd` se o terminal bloquear o script `npm.ps1`.
+
+| Comando | O que verifica |
+| --- | --- |
+| `npm run lint` | Analisa o código com o Oxlint, configurado no projeto. |
+| `npm run build` | Verifica os tipos com o TypeScript e gera a versão de produção em `dist/`. |
+| `npm run preview` | Serve o build localmente depois de `npm run build`. |
+
+## Estrutura
+
+- `src/paginas/Inicio.tsx` monta as seções da página.
+- `src/componentes/` contém o cabeçalho, a apresentação, as seções, o botão de tema e os projetos.
+- `src/dados/projetos.ts` é onde se cadastram os projetos e seus links opcionais.
+- `src/hooks/useTema.ts` sincroniza o tema com o HTML e o armazenamento local.
+- `src/index.css` define a paleta dos temas, o reset e os estilos globais. Os arquivos `*.module.css` ficam junto da página ou do componente que estilizam.
+- `public/favicon.svg` é o ícone da aba do navegador.

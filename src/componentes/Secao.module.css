@@ -1,0 +1,17 @@
+/* Define o painel e a hierarquia visual das seções. */
+.secao {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-painel);
+  background: var(--superficie);
+  color: var(--texto-suave);
+}
+
+.titulo {
+  margin-bottom: 0.75rem;
+  color: var(--titulo);
+  font-size: clamp(1.375rem, 3vw, 1.875rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}

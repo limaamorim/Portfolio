@@ -1,65 +1,50 @@
+// Exibe a lista de projetos e permite filtrar os que têm repositório.
 import { useState } from "react";
-
-type Projeto = {
-  id: string;
-  nome: string;
-  descricao: string;
-  linkGithub?: string; // O ponto de interrogação torna o campo opcional.
-};
-
-const projetos: Projeto[] = [
-  {
-    id: "portfolio",
-    nome: "Portfólio pessoal",
-    descricao: "Repositório da versão original do meu portfólio.",
-    linkGithub: "https://github.com/limaamorim/Meu-Portfolio",
-  },
-  {
-    id: "gerenciador-tarefas",
-    nome: "Gerenciador de tarefas",
-    descricao: "Projeto de estudo para praticar React com uma lista de tarefas.",
-  },
-];
+import { projetos } from "../dados/projetos";
+import Secao from "./Secao";
+import estilos from "./Projetos.module.css";
 
 export default function Projetos() {
-  // false significa que a caixa começa desmarcada.
   const [somenteComGithub, setSomenteComGithub] = useState(false);
 
-  // Começamos com todos os projetos e aplicamos o filtro se a caixa estiver marcada.
-  let projetosVisiveis = projetos;
-
-  if (somenteComGithub) {
-    projetosVisiveis = projetos.filter((projeto) => Boolean(projeto.linkGithub));
-  }
+  // A lista é derivada do filtro a cada renderização.
+  const projetosVisiveis = somenteComGithub
+    ? projetos.filter((projeto) => Boolean(projeto.linkGithub))
+    : projetos;
 
   return (
-    <section id="projetos">
-      <h2>Projetos</h2>
-
-      <label>
+    <Secao id="projetos" titulo="Projetos">
+      <label className={estilos.filtro}>
         <input
           type="checkbox"
           checked={somenteComGithub}
-          onChange={(evento) => {
-            // checked contém true se a caixa foi marcada e false se foi desmarcada.
-            setSomenteComGithub(evento.currentTarget.checked);
-          }}
-        />{" "}
+          onChange={(evento) => setSomenteComGithub(evento.currentTarget.checked)}
+        />
         Mostrar apenas projetos com GitHub
       </label>
 
-      <ul>
+      <p className={estilos.resultado} role="status">
+        {projetosVisiveis.length === 1
+          ? "1 projeto exibido"
+          : `${projetosVisiveis.length} projetos exibidos`}
+      </p>
+
+      <ul className={estilos.lista} role="list">
         {projetosVisiveis.map((projeto) => (
-          <li key={projeto.id}>
+          <li key={projeto.id} className={estilos.cartao}>
             <h3>{projeto.nome}</h3>
             <p>{projeto.descricao}</p>
-
             {projeto.linkGithub && (
-              <a href={projeto.linkGithub}>Ver repositório no GitHub</a>
+              <a
+                href={projeto.linkGithub}
+                aria-label={`Ver repositório no GitHub de ${projeto.nome}`}
+              >
+                Ver repositório no GitHub <span aria-hidden="true">↗</span>
+              </a>
             )}
           </li>
         ))}
       </ul>
-    </section>
+    </Secao>
   );
 }
