@@ -29,6 +29,19 @@ export default function Projetos() {
                 <Icone nome="github" tamanho={16} /> GitHub
               </a>
             )}
+
+             {/* O cartão exibe o link apenas quando o projeto tem repositório cadastrado. */}
+            {projeto.linkProjeto && (
+              <a
+                className="projetos__link"
+                href={projeto.linkProjeto}
+                aria-label={`GitHub de ${projeto.nome}`}
+              >
+                <Icone nome="github" tamanho={16} /> GitHub
+              </a>
+            )}
+
+
           </li>
         ))}
       </ul>

@@ -5,6 +5,7 @@ type Projeto = {
   descricao: string;
   tecnologias: string[];
   linkGithub?: string;
+  linkProjeto?: string;
 };
 
 export const projetos: Projeto[] = [
@@ -14,6 +15,8 @@ export const projetos: Projeto[] = [
     descricao: "Plataforma de indicações educacionais com autenticação, gamificação, rankings e cálculo de impacto social e financeiro.",
     tecnologias: ["Node.js", "Express", "PostgreSQL", "React", "Docker"],
     linkGithub: "https://github.com/limaamorim/Proleduca_Backend",
+
+    
   },
   {
     id: "indicium",
@@ -35,18 +38,18 @@ export const projetos: Projeto[] = [
     descricao: "Sistema para inscrições, check-in e relatórios de eventos, palestras e workshops, com dados armazenados em JSON.",
     tecnologias: ["Python", "JSON", "CLI", "Pytest"],
     linkGithub: "https://github.com/limaamorim/Sistema-de-Gerenciamento-de-Eventos-",
+
   },
   {
-    id: "portfolio",
-    nome: "Portfólio pessoal",
-    descricao: "Repositório da versão original do meu portfólio.",
-    tecnologias: ["React", "TypeScript", "Vite"],
-    linkGithub: "https://github.com/limaamorim/Meu-Portfolio",
+    id: "sitema-barbearia",
+    nome: "Sistema de Agendamento",
+    descricao: "Sistema usuários poderam agendar seus serviços com o barbeiro",
+    tecnologias: ["NodeJS", "Express", "React", "MongoDB"],
+    linkGithub: "https://github.com/limaamorim/Sistema-de-Gerenciamento-de-Eventos-",
+    linkProjeto: "https://esquina-barbearia.vercel.app/"
+    
   },
-  {
-    id: "gerenciador-tarefas",
-    nome: "Gerenciador de tarefas",
-    descricao: "Projeto de estudo para praticar React com uma lista de tarefas.",
-    tecnologias: ["React"],
-  },
+  
+
+
 ];

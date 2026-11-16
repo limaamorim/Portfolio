@@ -15,7 +15,7 @@ export default function BotaoTema() {
       onClick={alternarTema}
     >
       <span aria-hidden="true">{tema === "escuro" ? "☾" : "☀"}</span>
-      Tema claro
+      
     </button>
   );
 }
