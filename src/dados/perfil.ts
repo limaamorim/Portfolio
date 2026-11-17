@@ -39,5 +39,5 @@ export const trajetoria = [
 export const contatos = [
   { nome: "GitHub", icone: "github" as const, detalhe: "limaamorim", url: "https://github.com/limaamorim" },
   { nome: "LinkedIn", icone: "linkedin" as const, detalhe: "José Fernando", url: "https://www.linkedin.com/in/jos%C3%A9-fernando-lima-amorim/" },
-  { nome: "WhatsApp", icone: "whatsapp" as const, detalhe: "limaamorim", url: "https://github.com/limaamorim" },
+  { nome: "WhatsApp", icone: "whatsapp" as const, detalhe: "Enviar mensagem", url: "https://wa.me/5581998129437" },
 ];

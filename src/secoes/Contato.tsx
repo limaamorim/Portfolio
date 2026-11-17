@@ -1,4 +1,4 @@
-// Exibe os links para os perfis profissionais.
+// Exibe os canais de contato e os perfis profissionais.
 import Icone from "../componentes/Icone";
 import Secao from "../componentes/Secao";
 import { contatos } from "../dados/perfil";
@@ -11,7 +11,12 @@ export default function Contato() {
       <ul className="contato__lista" role="list">
         {contatos.map(({ nome, detalhe, url, icone }) => (
           <li key={nome}>
-            <a className="secao__painel secao__painel--com-icone cartao-hover" target="_blank" href={url}>
+            <a
+              className="secao__painel secao__painel--com-icone cartao-hover"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="icone-destaque"><Icone nome={icone} tamanho={20} /></span>
               <div>
                 <strong>{nome}</strong>
