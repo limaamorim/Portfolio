@@ -10,20 +10,23 @@ type Projeto = {
 
 export const projetos: Projeto[] = [
   {
+    id: "sitema-barbearia",
+    nome: "Sistema de Agendamento",
+    descricao: "Sistema usuários poderam agendar seus serviços com o barbeiro",
+    tecnologias: ["NodeJS", "Express", "React", "MongoDB"],
+    linkGithub: "https://github.com/limaamorim/Sistema-de-Gerenciamento-de-Eventos-",
+    linkProjeto: "https://esquina-barbearia.vercel.app/"
+
+  },
+  {
     id: "amigo-edu",
     nome: "Amigo Edu — Full Stack",
     descricao: "Plataforma de indicações educacionais com autenticação, gamificação, rankings e cálculo de impacto social e financeiro.",
     tecnologias: ["Node.js", "Express", "PostgreSQL", "React", "Docker"],
     linkGithub: "https://github.com/limaamorim/Proleduca_Backend",
+    linkProjeto: "https://amigoedu.netlify.app/login",
 
-    
-  },
-  {
-    id: "indicium",
-    nome: "Desafio Ciência de Dados — Indicium / Lighthouse",
-    descricao: "Análise exploratória e modelagem preditiva com dados de cinema para apoiar a tomada de decisão.",
-    tecnologias: ["Python", "Pandas", "Scikit-learn", "Jupyter Notebook"],
-    linkGithub: "https://github.com/limaamorim/lighthouse-ciencia-dados",
+
   },
   {
     id: "api-produtos",
@@ -40,16 +43,8 @@ export const projetos: Projeto[] = [
     linkGithub: "https://github.com/limaamorim/Sistema-de-Gerenciamento-de-Eventos-",
 
   },
-  {
-    id: "sitema-barbearia",
-    nome: "Sistema de Agendamento",
-    descricao: "Sistema usuários poderam agendar seus serviços com o barbeiro",
-    tecnologias: ["NodeJS", "Express", "React", "MongoDB"],
-    linkGithub: "https://github.com/limaamorim/Sistema-de-Gerenciamento-de-Eventos-",
-    linkProjeto: "https://esquina-barbearia.vercel.app/"
-    
-  },
-  
+
+
 
 
 ];

@@ -10,7 +10,7 @@ export default function Sobre() {
       <div className="sobre__conteudo">
         <div className="sobre__bio">
           <p>
-            Sou José Fernando de Lima Amorim, de Recife. Gosto de desenvolver
+            Sou José Fernando de Lima Amorim, de Paulista. Gosto de desenvolver
             aplicações que resolvem problemas do dia a dia.
           </p>
           <p>

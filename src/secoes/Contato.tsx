@@ -11,7 +11,7 @@ export default function Contato() {
       <ul className="contato__lista" role="list">
         {contatos.map(({ nome, detalhe, url, icone }) => (
           <li key={nome}>
-            <a className="secao__painel secao__painel--com-icone cartao-hover" href={url}>
+            <a className="secao__painel secao__painel--com-icone cartao-hover" target="_blank" href={url}>
               <span className="icone-destaque"><Icone nome={icone} tamanho={20} /></span>
               <div>
                 <strong>{nome}</strong>

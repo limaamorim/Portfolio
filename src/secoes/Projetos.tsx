@@ -27,6 +27,7 @@ export default function Projetos() {
                     className="projetos__link"
                     href={projeto.linkGithub}
                     aria-label={`GitHub de ${projeto.nome}`}
+                    target="_blank"
                   >
                     <Icone nome="github" tamanho={16} /> GitHub
                   </a>
@@ -37,6 +38,7 @@ export default function Projetos() {
                     className="projetos__link"
                     href={projeto.linkProjeto}
                     aria-label={`Ver projeto: ${projeto.nome}`}
+                    target="_blank"
                   >
                     <Icone nome="linkExterno" tamanho={16} /> Ver projeto
                   </a>
